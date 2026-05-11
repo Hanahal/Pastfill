@@ -644,7 +644,7 @@ with tabs[2]:
 #  TAB 3 — BARRICADA
 # ══════════════════════════════
 with tabs[3]:
-    st.markdown("## Paso 5 — Presión Lateral sobre la Barricada")
+    st.markdown("## Presión Lateral sobre la Barricada")
     barr = st.session_state.barricada
  
     h_b   = float(barr["altura_pasta_m"])
