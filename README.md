@@ -1,114 +1,190 @@
-# RELLENO EN PASTA (PASTE FILL SYSTEM)
+#  RELLENO EN PASTA
 
-Aplicación desarrollada en Streamlit para el diseño y análisis de sistemas de relleno en pasta en minería subterránea. Permite realizar cálculos geomecánicos desde la geometría del tajeo, dosificación de mezcla, resistencia UCS y presión sobre barricadas, además de generar reportes técnicos en PDF.
+Aplicación desarrollada en **Streamlit** para el diseño, análisis geomecánico y evaluación granulométrica de sistemas de **Relleno en Pasta (Paste Fill)** aplicados a minería subterránea.
 
-# CARACTERÍSTICAS PRINCIPALES
+La plataforma permite realizar cálculos geotécnicos desde la geometría del tajeo, diseño de mezcla cementada, análisis UCS, presión sobre barricadas y caracterización granulométrica del relave, además de generar reportes técnicos profesionales en PDF.
 
-## ANÁLISIS DEL TAJEO
-Cálculo del volumen del caserón  
-UCS requerida mediante:  
-- Método simplificado  
-- Método de Mitchell (1982)  
-Aplicación de factor de seguridad  
-Visualización de presión vertical  
+---
 
-## DISEÑO DE MEZCLA
-Dosificación por metro cúbico de pasta:  
-- Cemento  
-- Relave  
-- Agua  
+#  CARACTERÍSTICAS PRINCIPALES
 
-Cálculo de densidad de pasta  
-Relación agua/cemento  
-Estimación de UCS mediante ley de Abrams modificada  
-Gráficos de comportamiento UCS vs C/S  
+##  ANÁLISIS DEL TAJEO
 
-## RESISTENCIA UCS
-Evolución de resistencia a 7, 14 y 28 días  
-Comparación entre probetas  
-Verificación contra UCS requerida  
-Indicadores de cumplimiento del diseño  
+Cálculo automático de:
 
-## PRESIÓN SOBRE BARRICADA
-Cálculo de presión hidrostática del relleno  
-Efecto del límite elástico (modelo tipo Bingham)  
-Presión total sobre la estructura  
-Evaluación de carga sobre la barricada  
-Gráficos de distribución de presión  
+- Volumen del caserón
+- UCS requerida
+- Presión vertical del relleno
+- Relación geométrica del tajeo
+- Evaluación de estabilidad
 
-## REPORTE TÉCNICO
-Generación automática de PDF  
-Incluye:  
-- Tablas de resultados  
-- Cálculos geomecánicos  
-- Gráficos técnicos  
+### Métodos Implementados
 
-Exportable para informes de ingeniería  
+- Método simplificado
+- Método de Mitchell (1982)
 
-# ENTRADA DE DATOS
+### Funciones Adicionales
 
-La aplicación trabaja en dos modos:
+- Aplicación de factor de seguridad
+- Visualización de presión vertical
+- Interpretación geomecánica
 
-## Modo automático
-Usa valores por defecto precargados  
+---
 
-## Modo CSV
-Permite cargar archivo maestro con datos de:  
-- TAJEO  
-- MEZCLA  
-- BARRICADA  
-- UCS por edades  
+#  DISEÑO DE MEZCLA
 
-Incluye plantilla descargable desde la aplicación  
+Dosificación de mezcla por metro cúbico:
 
-# MODELOS Y FÓRMULAS UTILIZADAS
+- Cemento
+- Relave
+- Agua
 
-UCS requerida (simplificada):  
-UCS = (γ × H) / (H/L + 1) × FS  
+### Cálculos Incluidos
 
-Método de Mitchell (1982):  
-σ = (γ × H²) / (2 × L) × FS  
+- Densidad de pasta
+- Relación agua/cemento
+- Contenido de sólidos
+- Relación cemento/sólidos (C/S)
+- Estimación UCS mediante ley de Abrams modificada
 
-Ley de Abrams modificada:  
-UCS = k × (C/S)^n  
+### Visualizaciones
 
-Presión hidrostática:  
-P = ρ × g × H  
+- UCS vs C/S
+- Comparación de mezclas
+- Evolución de resistencia
 
-Modelo de esfuerzo tipo Bingham:  
-ΔP = 2 × τ₀ × H / R  
+---
 
-# INSTALACIÓN
+#  ANÁLISIS GRANULOMÉTRICO ASTM
 
-git clone https://github.com/tuusuario/paste-fill-system.git  
-cd paste-fill-system  
-pip install -r requirements.txt  
-streamlit run app.py  
+Módulo técnico para caracterización granulométrica del relave utilizado en el relleno en pasta.
 
-# DEPENDENCIAS
+---
 
-streamlit  
-numpy  
-pandas  
-plotly  
-reportlab  
-kaleido  
+##  Normas Implementadas
 
-# USO
+- ASTM D6913 — Análisis granulométrico por tamices
+- ASTM D2487 — Clasificación USCS
+- ASTM D1140 — Determinación de finos pasante N°200
 
-Ejecutar la aplicación con Streamlit  
-Cargar archivo CSV o usar datos por defecto  
-Navegar por pestañas:  
-- Tajeo  
-- Mezcla  
-- UCS  
-- Barricada  
-- Reporte final  
+---
 
-Generar reporte PDF  
+##  Parámetros Calculados
 
-# REFERENCIAS
+- % retenido parcial
+- % retenido acumulado
+- % que pasa
+- D10
+- D30
+- D60
+- Coeficiente de uniformidad (Cu)
+- Coeficiente de curvatura (Cc)
+- Módulo de fineza
+- Clasificación USCS
 
-Landriault et al. (1996) – Paste Fill Systems  
-Mitchell (1982) – Modelos de estabilidad en rellenos  
-ACI 318 – Diseño de concreto  
+---
+
+##  Visualizaciones Granulométricas
+
+- Curva granulométrica semilogarítmica
+- Distribución grava–arena–finos
+- Barras de retenido parcial
+- Evaluación ASTM automática
+- Indicadores de clasificación del material
+
+---
+
+##  Evaluaciones Técnicas
+
+- Verificación de gradación
+- Clasificación automática USCS
+- Evaluación de contenido de finos
+- Compatibilidad del relave para paste fill
+
+---
+
+#  RESISTENCIA UCS
+
+Evaluación de resistencia a:
+
+- 7 días
+- 14 días
+- 28 días
+
+### Funciones
+
+- Comparación entre probetas
+- Validación contra UCS requerida
+- Indicadores de cumplimiento
+- Interpretación del desempeño mecánico
+
+### Visualizaciones
+
+- Curvas UCS vs tiempo
+- Barras comparativas
+- Líneas de referencia UCS requerida
+
+---
+
+#  PRESIÓN SOBRE BARRICADA
+
+Cálculo de:
+
+- Presión hidrostática del relleno
+- Presión total sobre barricada
+- Distribución de esfuerzos
+- Evaluación estructural
+
+### Modelos Aplicados
+
+#### Modelo Hidrostático
+
+Presión debido a columna de relleno.
+
+#### Modelo Tipo Bingham
+
+Considera comportamiento reológico del relleno en pasta.
+
+---
+
+##  Resultados
+
+- Presión total
+- Esfuerzo lateral
+- Incremento de presión
+- Carga sobre barricada
+
+### Visualizaciones
+
+- Distribución vertical de presión
+- Diagramas de carga
+- Comparación de escenarios
+
+---
+
+#  REPORTE TÉCNICO PDF
+
+Generación automática de reporte profesional.
+
+---
+
+##  Incluye
+
+- Datos del tajeo
+- Diseño de mezcla
+- Resultados UCS
+- Evaluación de barricada
+- Tablas granulométricas ASTM
+- Clasificación USCS
+- Cálculos geomecánicos
+- Gráficos técnicos
+- Interpretaciones ingenieriles
+
+---
+
+##  Características del Reporte
+
+- Diseño profesional tipo ingeniería minera
+- Tablas estructuradas
+- Diagramas incrustados
+- Exportación automática PDF
